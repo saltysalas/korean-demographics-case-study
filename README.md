@@ -24,9 +24,9 @@ In this case study, I analyzed South Korea's vital statistics and population. I 
 
 ## Project Contents
 
-- `SQL/` – Contains all project SQL queries/scripts
-- `outputs/` – Example outputs or visualizations
-- `README.md` – This file!
+- Significant queries - 
+- Google slideshow with visualizaitons - https://docs.google.com/presentation/d/1LIt45cig2nKx1k5FGHovthybylGUZWhH1ovOea3rxYQ/edit?usp=sharing
+- Kaggle Database - 
 
 ## Contact Me
 
