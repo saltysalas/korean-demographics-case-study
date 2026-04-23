@@ -6,7 +6,6 @@ WITH population_lagged AS (
     FROM `case-study-draft.korean_demographics.korean_aggregation`
     WHERE Region = 'Whole country'
 )
-
 SELECT
     `Date`,
     Population_INT,
