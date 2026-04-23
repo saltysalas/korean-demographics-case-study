@@ -25,7 +25,7 @@ In this case study, I analyzed South Korea's vital statistics and population. I 
 
 ## Project Contents
 
-- Significant queries - 
+- Significant queries - [SQL Queries](queries/)
 - Google slideshow with visualizaitons - https://docs.google.com/presentation/d/1LIt45cig2nKx1k5FGHovthybylGUZWhH1ovOea3rxYQ/edit?usp=sharing
 - Kaggle Database - https://www.kaggle.com/datasets/josemreyess/korean-demographics-2000-2022
 
