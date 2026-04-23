@@ -1,0 +1,8 @@
+SELECT
+    ROUND(CORR(Marriages, Births), 2) AS marriages_vs_births,
+    ROUND(CORR(Marriage_rate, Birth_Rate), 2) AS marriages_vs_birth_rate,
+    ROUND(CORR(Marriages, Natural_growth), 2) AS marriages_vs_pop_growth,
+    ROUND(CORR(Marriage_Rate, Natural_growth_rate), 2) AS marriage_rate_vs_growth_rate,
+    ROUND(Corr(Marriages, Population_INT), 2) as marriages_vs_pop
+FROM `case-study-draft.korean_demographics.korean_aggregation`
+WHERE Region = 'Whole country'
