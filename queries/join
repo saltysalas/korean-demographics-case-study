@@ -1,0 +1,5 @@
+SELECT *
+FROM `case-study-draft.korean_demographics.korean_vital_statistics` 
+JOIN `case-study-draft.korean_demographics.korean_population` USING (Region, `Date`)
+Order by
+  Region, `Date`
