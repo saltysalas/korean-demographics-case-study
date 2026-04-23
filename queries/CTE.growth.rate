@@ -1,0 +1,16 @@
+WITH population_lagged AS (
+    SELECT
+        `Date`,
+        Population_INT,
+        LAG(Population_INT) OVER (ORDER BY `Date`) AS previous_year_population
+    FROM `case-study-draft.korean_demographics.korean_aggregation`
+    WHERE Region = 'Whole country'
+)
+
+SELECT
+    `Date`,
+    Population_INT,
+    previous_year_population,
+    ROUND(((Population_INT - previous_year_population) / previous_year_population) * 100, 2) AS population_growth_rate_pct
+FROM population_lagged
+ORDER BY `Date`
