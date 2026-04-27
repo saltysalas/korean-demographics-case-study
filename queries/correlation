@@ -1,3 +1,4 @@
+-BigQuery has a handy correlation funciton which I used to get the values for this array
 SELECT
     ROUND(CORR(Marriages, Births), 2) AS marriages_vs_births,
     ROUND(CORR(Marriage_rate, Birth_Rate), 2) AS marriages_vs_birth_rate,
