@@ -1,3 +1,4 @@
+-- I wanted to join one large table and a smaller one with two common columns. I figured using would be the easist way to combing them
 SELECT *
 FROM `case-study-draft.korean_demographics.korean_vital_statistics` 
 JOIN `case-study-draft.korean_demographics.korean_population` USING (Region, `Date`)
