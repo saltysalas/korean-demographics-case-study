@@ -1,5 +1,5 @@
-/* This query will calculate for a 3 year moving average of population and the growth rate and accerlation.
-I chose to smooth the population to create a less jagged and clearer growth and acceleration*/ 
+/* This query will calculate for a 3-year moving average of population and the growth rate and acceleration.
+I chose to smooth the population to create a less jagged and clearer growth and acceleration.*/ 
 WITH moving_avg_population AS (
     SELECT
         `Date`,
