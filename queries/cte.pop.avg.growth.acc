@@ -1,0 +1,33 @@
+/* This query will calculate for a 3 year moving average of population and the growth rate and accerlation.
+I chose to smooth the population to create a less jagged and clearer growth and acceleration*/ 
+WITH moving_avg_population AS (
+    SELECT
+        `Date`,
+        ROUND(AVG(Population_INT) OVER (
+            ORDER BY `Date`
+            ROWS BETWEEN 2 PRECEDING AND CURRENT ROW -- this selects the 3 years for the moving average
+        ), 0) AS smoothed_population
+    FROM `case-study-draft.korean_demographics.korean_aggregation`
+    WHERE Region = 'Whole country'
+),
+population_lagged AS (
+    SELECT
+        `Date`,
+        smoothed_population,
+        LAG(smoothed_population) OVER (ORDER BY `Date`) AS prev_smoothed_pop
+    FROM moving_avg_population
+),
+growth_rate AS (
+    SELECT
+        `Date`,
+        smoothed_population,
+        ROUND(((smoothed_population - prev_smoothed_pop) / prev_smoothed_pop) * 100, 2) AS growth_rate_pct
+    FROM population_lagged
+)
+SELECT
+    `Date`,
+    smoothed_population,
+    growth_rate_pct,
+    ROUND(growth_rate_pct - LAG(growth_rate_pct) OVER (ORDER BY `Date`), 2) AS acceleration_pct
+FROM growth_rate
+ORDER BY `Date`
